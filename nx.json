@@ -102,7 +102,5 @@
         "unitTestRunner": "vitest"
       }
     }
-  },
-  "nxCloudId": "68d575850fe9ac9cce445006",
-  "nxCloudUrl": "https://snapshot.nx.app"
+  }
 }
