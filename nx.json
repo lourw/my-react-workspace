@@ -75,6 +75,9 @@
     "docker": { "skipVersionActions": true }
   },
   "targetDefaults": {
+    "e2e-ci--**/**": {
+      "parallelism": false
+    },
     "test": { "dependsOn": ["^build"] },
     "@nx/esbuild:esbuild": {
       "cache": true,
