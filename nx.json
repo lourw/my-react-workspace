@@ -76,7 +76,6 @@
   },
   "targetDefaults": {
     "e2e-ci--**/**": {
-      "parallelism": false
     },
     "test": { "dependsOn": ["^build"] },
     "@nx/esbuild:esbuild": {
