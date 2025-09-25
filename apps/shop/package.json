@@ -9,7 +9,7 @@
         "dependsOn": ["@org/api:serve"]
       },
       "preview": {
-        "dependsOn": ["@org/api:serve"]
+        "dependsOn": ["build", "@org/api:serve"]
       }
     }
   },
