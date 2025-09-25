@@ -36,7 +36,6 @@ jobs:
           cache: 'pnpm'
 
       - run: pnpm install
-      - run: npx playwright install --with-deps
 
       # Prepend any command with "nx-cloud record --" to record its logs to Nx Cloud
       # - run: npx nx-cloud record -- echo Hello World
