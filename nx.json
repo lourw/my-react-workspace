@@ -18,7 +18,9 @@
     {
       "plugin": "@nx/js/typescript",
       "options": {
-        "typecheck": { "targetName": "typecheck" },
+        "typecheck": {
+          "targetName": "typecheck"
+        },
         "build": {
           "targetName": "build",
           "configName": "tsconfig.lib.json",
@@ -39,7 +41,12 @@
         "typecheckTargetName": "typecheck"
       }
     },
-    { "plugin": "@nx/eslint/plugin", "options": { "targetName": "lint" } },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    },
     {
       "plugin": "@nx/vite/plugin",
       "options": {
@@ -56,28 +63,46 @@
     },
     {
       "plugin": "@nx/playwright/plugin",
-      "options": { "targetName": "e2e", "ciTargetName": "e2e-ci" }
+      "options": {
+        "targetName": "e2e",
+        "ciTargetName": "e2e-ci"
+      }
     },
-    { "plugin": "@nx/jest/plugin", "options": { "targetName": "test" } },
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      }
+    },
     {
       "plugin": "@nx/docker",
-      "options": { "buildTarget": "docker:build", "runTarget": "docker:run" }
+      "options": {
+        "buildTarget": "docker:build",
+        "runTarget": "docker:run"
+      }
     },
     {
       "plugin": "@nx/js/typescript",
       "include": ["libs/shared/models/*"],
-      "options": { "typecheck": { "targetName": "typecheck" } }
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        }
+      }
     }
   ],
   "release": {
     "projects": ["@org/api"],
     "projectsRelationship": "independent",
-    "docker": { "skipVersionActions": true }
+    "docker": {
+      "skipVersionActions": true
+    }
   },
   "targetDefaults": {
-    "e2e-ci--**/**": {
+    "e2e-ci--**/**": {},
+    "test": {
+      "dependsOn": ["^build"]
     },
-    "test": { "dependsOn": ["^build"] },
     "@nx/esbuild:esbuild": {
       "cache": true,
       "dependsOn": ["^build"],
@@ -97,7 +122,9 @@
         "linter": "eslint",
         "bundler": "vite"
       },
-      "component": { "style": "css" },
+      "component": {
+        "style": "css"
+      },
       "library": {
         "style": "css",
         "linter": "eslint",
@@ -106,5 +133,6 @@
     }
   },
   "bust": 1,
-  "nxCloudId": "68d57a344484f16add8417db"
+  "nxCloudId": "68db30b54856e56bc427076e",
+  "nxCloudUrl": "https://staging.nx.app"
 }
